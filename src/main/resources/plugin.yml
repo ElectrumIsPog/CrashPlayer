@@ -1,7 +1,7 @@
 name: Crash
 author: Electrum
 main: me.electrum.crash.Main
-version: 1.0
+version: 1.1
 commands:
   crash:
     description: Crashes a players client
