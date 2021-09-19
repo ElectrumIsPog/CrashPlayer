@@ -1,0 +1,11 @@
+name: CrashPlayer
+author: Electrum
+main: me.electrum.crash.Main
+version: 1.0
+commands:
+  crash:
+    description: Crashes a players client
+    usage: /crash player
+    aliases: closegame
+  permission:
+    crash.player: Able to crash a player
