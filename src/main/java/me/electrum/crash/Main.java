@@ -1,16 +1,16 @@
 package me.electrum.crash;
 
-import me.electrum.crash.commands.CrashPlayer;
+import me.electrum.crash.commands.CrashCommand;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
     public void onEnable() {
-        getLogger().info("Crashplayer v1.0 has started.");
-        getCommand("crash").setExecutor((CommandExecutor)new CrashPlayer());
+        getLogger().info("Crash v1.0 has started.");
+        getCommand("crash").setExecutor((CommandExecutor)new CrashCommand());
     }
 
     public void onDisable() {
-        getLogger().info("Crashplayer v1.0 has disabled.");
+        getLogger().info("Crash v1.0 has disabled.");
     }
 }

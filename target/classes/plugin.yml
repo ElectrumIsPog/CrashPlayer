@@ -9,3 +9,4 @@ commands:
     aliases: closegame
   permission:
     crash.player: Able to crash a player
+    crash.bypass: Able to bypass the crash command
