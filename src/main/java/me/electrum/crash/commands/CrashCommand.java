@@ -1,7 +1,5 @@
 package me.electrum.crash.commands;
 
-import java.util.Collections;
-import net.minecraft.server.v1_8_R3.Packet;
 import net.minecraft.server.v1_8_R3.PacketPlayOutExplosion;
 import net.minecraft.server.v1_8_R3.Vec3D;
 import org.bukkit.Bukkit;
@@ -11,6 +9,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
+
+import java.util.Collections;
 
 public class CrashPlayer implements CommandExecutor {
     @SuppressWarnings("ALL")
